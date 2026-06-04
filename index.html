@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安徽希拓科技有限公司 | 电力工程 · 新能源 · 智能配电
+     <!-- 网页描述（搜索结果中显示的摘要） -->
+     <meta name="description" content="安徽希拓科技有限公司，专注电力设施安装维修、太阳能发电、储能技术及智能配电控制设备研发与销售，位于安徽省宣城市广德市。">
+       <!-- 网页关键词（辅助，非必须但建议加上） -->
+       <meta name="keywords" content="希拓科技,安徽希拓,电力工程,新能源,智能配电,储能,光伏,广德">
+    </title>
+    <style>
+        /* ========== CSS 变量 ========== */
+        :root {
+            --primary: #0a2f44;
+            --primary-light: #0f4a6b;
+            --accent: #f0a030;
+            --accent-light: #f8c15c;
+            --white: #ffffff;
+            --gray-50: #f8f9fa;
+            --gray-100: #f1f3f5;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #adb5bd;
+            --gray-500: #6c757d;
+            --gray-600: #495057;
+            --gray-700: #343a40;
+            --gray-800: #1e2a32;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+            --shadow-xl: 0 20px 48px rgba(0,0,0,0.16), 0 8px 16px rgba(0,0,0,0.08);
+            --radius-sm: 6px;
+            --radius: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+            --transition-fast: 0.2s cubic-bezier(0.4,0,0.2,1);
+            --max-width: 1200px;
+            --font-sans: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; font-size:16px; }
+        body {
+            font-family:var(--font-sans);
+            color:var(--gray-700);
+            background-color:var(--white);
+            line-height:1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            overflow-x:hidden;
+            min-height:100vh;               /* 确保内容不足时也能占满屏幕 */
+        }
+
+        /* ========== 导航栏 ========== */
+        .navbar {
+            position:fixed; top:0; left:0; right:0; z-index:1000;
+            background:rgba(10,47,68,0.95); backdrop-filter:blur(18px);
+            -webkit-backdrop-filter:blur(18px);
+            border-bottom:1px solid rgba(255,255,255,0.08);
+            transition:var(--transition);
+        }
+        .navbar.scrolled { box-shadow:var(--shadow-lg); background:rgba(10,47,68,0.98); }
+        .navbar-inner {
+            max-width:var(--max-width); margin:0 auto;
+            display:flex; align-items:center; justify-content:space-between;
+            padding:0 28px; height:66px;
+        }
+        .nav-logo {
+            display:flex; align-items:center; gap:12px; text-decoration:none;
+            color:var(--white); font-weight:700; font-size:1.25rem;
+            letter-spacing:0.02em; white-space:nowrap;
+        }
+        .nav-logo .logo-icon {
+            width:42px; height:42px; background:linear-gradient(135deg, var(--accent), #e8941a);
+            border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center;
+            font-size:1.4rem; color:#fff; flex-shrink:0;
+            box-shadow:0 2px 10px rgba(240,160,48,0.35);
+        }
+        .nav-logo .logo-text { display:flex; flex-direction:column; line-height:1.2; }
+        .nav-logo .logo-text .company-name { font-size:1.25rem; font-weight:700; letter-spacing:0.03em; }
+        .nav-logo .logo-text .company-sub { font-size:0.6rem; font-weight:400; opacity:0.75; letter-spacing:0.06em; }
+        .nav-links { display:flex; list-style:none; gap:6px; align-items:center; }
+        .nav-links a {
+            color:rgba(255,255,255,0.85); text-decoration:none; padding:10px 18px;
+            border-radius:50px; font-size:0.95rem; font-weight:500;
+            transition:var(--transition-fast); letter-spacing:0.02em; white-space:nowrap;
+        }
+        .nav-links a:hover, .nav-links a.active { color:#fff; background:rgba(255,255,255,0.1); }
+        .nav-links a.cta-nav {
+            background:var(--accent); color:#fff; font-weight:600;
+            padding:10px 22px; box-shadow:0 2px 8px rgba(240,160,48,0.3);
+        }
+        .nav-links a.cta-nav:hover { background:#e8941a; box-shadow:0 4px 14px rgba(240,160,48,0.45); }
+        .hamburger {
+            display:none; flex-direction:column; gap:5px; cursor:pointer;
+            padding:8px; z-index:1001; background:none; border:none;
+        }
+        .hamburger span { width:26px; height:2.5px; background:#fff; border-radius:3px; transition:var(--transition-fast); }
+        .hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+        .hamburger.active span:nth-child(2) { opacity:0; }
+        .hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+        @media (max-width:900px) {
+            .hamburger { display:flex; }
+            .nav-links {
+                position:fixed; top:0; right:-100%; width:280px; height:100vh;
+                background:var(--primary); flex-direction:column; padding:90px 30px 40px;
+                gap:8px; transition:var(--transition); box-shadow:var(--shadow-xl);
+                align-items:stretch;
+                z-index:1000;   /* 保证菜单在底部导航之上 */
+            }
+            .nav-links.active { right:0; }
+            .nav-links a { padding:14px 20px; border-radius:var(--radius); font-size:1rem; }
+            .nav-links a.cta-nav { text-align:center; margin-top:8px; }
+            .navbar-inner { padding:0 20px; height:60px; }
+            .nav-logo { font-size:1.1rem; }
+            .nav-logo .logo-icon { width:36px; height:36px; font-size:1.2rem; }
+            .nav-logo .logo-text .company-name { font-size:1rem; }
+        }
+
+        /* ========== Hero 区域 ========== */
+        .hero {
+            min-height:100vh;
+            background:linear-gradient(160deg, #061e2f 0%, #0a2f44 30%, #0f4a6b 70%, #0d3b56 100%);
+            display:flex; align-items:center; justify-content:center;
+            position:relative; overflow:hidden; padding:100px 28px 80px;
+        }
+        .hero::before {
+            content:''; position:absolute; top:-60%; right:-30%; width:900px; height:900px;
+            background:radial-gradient(circle, rgba(240,160,48,0.08) 0%, transparent 70%);
+            border-radius:50%; pointer-events:none;
+        }
+        .hero::after {
+            content:''; position:absolute; bottom:-20%; left:-15%; width:600px; height:600px;
+            background:radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            border-radius:50%; pointer-events:none;
+        }
+        .hero-content { max-width:var(--max-width); width:100%; text-align:center; position:relative; z-index:1; }
+        .hero-badge {
+            display:inline-block; background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.15); color:var(--accent-light);
+            padding:8px 20px; border-radius:50px; font-size:0.9rem; font-weight:500;
+            letter-spacing:0.04em; margin-bottom:28px;
+        }
+        .hero h1 { font-size:clamp(2.2rem, 5vw, 3.5rem); font-weight:800; color:#fff; line-height:1.2; letter-spacing:0.03em; margin-bottom:20px; }
+        .hero h1 .highlight { color:var(--accent); }
+        .hero-desc { font-size:clamp(1rem, 2vw, 1.2rem); color:rgba(255,255,255,0.7); max-width:650px; margin:0 auto 36px; line-height:1.8; }
+        .hero-buttons { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+        .btn {
+            display:inline-block; padding:14px 32px; border-radius:50px; font-weight:600;
+            font-size:1rem; letter-spacing:0.03em; text-decoration:none; cursor:pointer;
+            transition:var(--transition); border:none;
+        }
+        .btn-primary { background:var(--accent); color:#fff; box-shadow:0 4px 18px rgba(240,160,48,0.4); }
+        .btn-primary:hover { background:#e8941a; box-shadow:0 6px 24px rgba(240,160,48,0.55); transform:translateY(-2px); }
+        .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.4); }
+        .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,0.06); transform:translateY(-2px); }
+        .hero-grid-pattern {
+            position:absolute; inset:0; pointer-events:none; opacity:0.03;
+            background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+            background-size:60px 60px;
+        }
+
+        /* ========== 通用区域 ========== */
+        .section { padding:80px 28px; }
+        .section-inner { max-width:var(--max-width); margin:0 auto; }
+        .section-label { display:inline-block; font-size:0.85rem; font-weight:600; letter-spacing:0.06em; color:var(--accent); text-transform:uppercase; margin-bottom:12px; }
+        .section-title { font-size:clamp(1.6rem, 3vw, 2.2rem); font-weight:700; color:var(--gray-800); margin-bottom:16px; letter-spacing:0.02em; line-height:1.3; }
+        .section-desc { color:var(--gray-500); font-size:1.05rem; max-width:700px; margin-bottom:40px; line-height:1.8; }
+        .section-divider { width:50px; height:4px; background:var(--accent); border-radius:2px; margin-bottom:28px; }
+
+        /* ========== 关于我们 ========== */
+        .about-section { background:var(--white); }
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+        .about-info-card { background:var(--gray-50); border-radius:var(--radius-lg); padding:32px 28px; border:1px solid var(--gray-200); }
+        .about-info-card .info-row { display:flex; gap:16px; padding:14px 0; border-bottom:1px solid var(--gray-200); align-items:flex-start; }
+        .about-info-card .info-row:last-child { border-bottom:none; }
+        .about-info-card .info-icon { width:40px; height:40px; background:var(--primary-light); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; color:#fff; }
+        .about-info-card .info-label { font-size:0.8rem; font-weight:600; color:var(--gray-500); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:2px; }
+        .about-info-card .info-value { font-weight:600; color:var(--gray-700); font-size:0.95rem; }
+        .about-text { font-size:1.05rem; color:var(--gray-600); line-height:1.9; }
+        .about-text strong { color:var(--primary); }
+        @media (max-width:768px) { .about-grid { grid-template-columns:1fr; gap:30px; } }
+
+        /* ========== 业务范围 ========== */
+        .business-section { background:var(--gray-50); }
+        .business-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:24px; }
+        .business-card {
+            background:#fff; border-radius:var(--radius-lg); padding:30px 24px;
+            border:1px solid var(--gray-200); transition:var(--transition);
+            box-shadow:var(--shadow-sm); position:relative; overflow:hidden;
+        }
+        .business-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); border-color:var(--accent-light); }
+        .business-card::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:4px;
+            background:linear-gradient(90deg, var(--accent), #e8941a); opacity:0; transition:var(--transition);
+        }
+        .business-card:hover::before { opacity:1; }
+        .business-card .card-icon { width:52px; height:52px; background:rgba(10,47,68,0.06); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; font-size:1.6rem; margin-bottom:18px; transition:var(--transition); }
+        .business-card:hover .card-icon { background:rgba(240,160,48,0.12); }
+        .business-card h3 { font-size:1.1rem; font-weight:700; color:var(--gray-800); margin-bottom:8px; letter-spacing:0.02em; }
+        .business-card p { font-size:0.9rem; color:var(--gray-500); line-height:1.7; }
+        .business-card .card-tag { display:inline-block; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; padding:4px 10px; border-radius:50px; margin-top:12px; background:var(--gray-100); color:var(--gray-500); text-transform:uppercase; }
+
+        /* ========== 经营资质 ========== */
+        .license-section { background:var(--white); }
+        .license-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+        .license-card { border-radius:var(--radius-lg); padding:28px 24px; border:2px solid var(--gray-200); transition:var(--transition); }
+        .license-card.permit { border-left:5px solid #e8941a; background:#fffdf7; }
+        .license-card.general { border-left:5px solid #2a7f5e; background:#f7fdfa; }
+        .license-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:14px; letter-spacing:0.02em; display:flex; align-items:center; gap:10px; }
+        .license-card h3 .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+        .license-card.permit h3 .dot { background:#e8941a; }
+        .license-card.general h3 .dot { background:#2a7f5e; }
+        .license-card ul { list-style:none; padding:0; }
+        .license-card ul li { padding:7px 0 7px 22px; position:relative; font-size:0.93rem; color:var(--gray-600); line-height:1.7; }
+        .license-card ul li::before { content:'✓'; position:absolute; left:0; top:7px; font-weight:700; font-size:0.75rem; }
+        .license-card.permit ul li::before { color:#e8941a; }
+        .license-card.general ul li::before { color:#2a7f5e; }
+        @media (max-width:768px) { .license-grid { grid-template-columns:1fr; } }
+
+        /* ========== 联系我们 ========== */
+        .contact-section { background:var(--primary); color:#fff; }
+        .contact-section .section-label { color:var(--accent-light); }
+        .contact-section .section-title { color:#fff; }
+        .contact-section .section-desc { color:rgba(255,255,255,0.7); }
+        .contact-section .section-divider { background:var(--accent); }
+        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:20px; }
+        .contact-info-block { display:flex; flex-direction:column; gap:20px; }
+        .contact-item {
+            display:flex; gap:16px; align-items:flex-start; padding:18px 20px;
+            background:rgba(255,255,255,0.05); border-radius:var(--radius);
+            border:1px solid rgba(255,255,255,0.1); transition:var(--transition);
+        }
+        .contact-item:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.2); }
+        .contact-item .ci-icon { width:44px; height:44px; background:rgba(240,160,48,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+        .contact-item .ci-text h4 { font-size:0.85rem; font-weight:600; letter-spacing:0.04em; color:var(--accent-light); margin-bottom:4px; }
+        .contact-item .ci-text p { font-size:0.95rem; color:rgba(255,255,255,0.85); line-height:1.6; }
+        .contact-map-placeholder {
+            background:rgba(255,255,255,0.05); border-radius:var(--radius-lg);
+            border:1px solid rgba(255,255,255,0.1); min-height:260px;
+            overflow:hidden; position:relative;
+        }
+        .contact-map-placeholder img { width:100%; height:100%; object-fit:cover; display:block; }
+        @media (max-width:768px) { .contact-grid { grid-template-columns:1fr; } }
+
+        /* ========== 页脚 ========== */
+        .footer {
+            background:#051a28; color:rgba(255,255,255,0.6); padding:30px 28px;
+            text-align:center; font-size:0.85rem; letter-spacing:0.02em;
+            border-top:1px solid rgba(255,255,255,0.06);
+        }
+        .footer-inner { max-width:var(--max-width); margin:0 auto; }
+        .footer a { color:var(--accent-light); text-decoration:none; transition:var(--transition-fast); }
+        .footer a:hover { color:#fff; }
+        .footer-divider { display:inline-block; margin:0 12px; opacity:0.4; }
+
+        /* ========== 返回顶部按钮 ========== */
+        .scroll-top {
+            position:fixed; bottom:30px; right:30px; width:46px; height:46px;
+            background:var(--accent); color:#fff; border:none; border-radius:50%;
+            cursor:pointer; font-size:1.2rem; z-index:999; box-shadow:var(--shadow-md);
+            transition:var(--transition); opacity:0; transform:translateY(20px);
+            pointer-events:none; display:flex; align-items:center; justify-content:center;
+        }
+        .scroll-top.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+        .scroll-top:hover { background:#e8941a; box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+
+        /* ========== 移动端底部导航栏 ========== */
+        .mobile-bottom-nav {
+            display:none;
+            position:fixed; bottom:0; left:0; right:0; height:60px;
+            background:var(--primary); border-top:1px solid rgba(255,255,255,0.1);
+            z-index:998; box-shadow:0 -4px 12px rgba(0,0,0,0.15);
+        }
+        .mobile-bottom-nav .nav-grid { display:flex; align-items:center; justify-content:space-around; height:100%; padding:0 8px; }
+        .mobile-bottom-nav .nav-item {
+            display:flex; flex-direction:column; align-items:center; justify-content:center;
+            gap:4px; color:rgba(255,255,255,0.75); text-decoration:none;
+            font-size:0.7rem; font-weight:500; transition:var(--transition-fast);
+            flex:1; cursor:pointer; background:none; border:none;
+            -webkit-tap-highlight-color:transparent;
+        }
+        .mobile-bottom-nav .nav-item .nav-icon { font-size:1.2rem; }
+        .mobile-bottom-nav .nav-item.active,
+        .mobile-bottom-nav .nav-item:active { color:var(--accent); background:rgba(255,255,255,0.05); }
+
+        @media (max-width:900px) {
+            .mobile-bottom-nav { display:block; }
+            body { padding-bottom:70px; }      /* 避免内容被底部导航遮挡 */
+            .scroll-top { bottom:80px; }      /* 返回顶部按钮上移 */
+        }
+
+        /* 遮罩层 */
+        .mobile-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:999; }
+        .mobile-overlay.active { display:block; }
+    </style>
+</head>
+<body>
+    <!-- ==================== 导航栏 ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#home" class="nav-logo">
+                <img src="logo.png" alt="安徽希拓科技" style="height:42px;">
+                <div class="logo-text">
+                    <span class="company-name">希   拓   科   技</span>
+                    <span class="company-sub">XITUO TECHNOLOGY</span>
+                </div>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#business">业务范围</a></li>
+                <li><a href="#license">经营资质</a></li>
+                <li><a href="#contact">联系我们</a></li>
+                <li><a href="#contact" class="cta-nav">咨询合作</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==================== Hero ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-grid-pattern"></div>
+        <div class="hero-content">
+            <span class="hero-badge">🌐 电力工程 · 新能源 · 智能配电</span>
+            <h1><span class="highlight">希  拓  科  技</span></h1>
+            <p class="hero-desc">立足皖南，辐射长三角。专注电力设施建设、太阳能发电、储能技术与智能配电控制设备，为客户提供一站式能源解决方案与工程技术服务。</p>
+            <div class="hero-buttons">
+                <a href="#business" class="btn btn-primary">了解业务范围</a>
+                <a href="#contact" class="btn btn-outline">联系我们</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 关于我们 ==================== -->
+    <section class="section about-section" id="about">
+        <div class="section-inner">
+            <span class="section-label">关于我们</span>
+            <h2 class="section-title">公司概况</h2>
+            <div class="section-divider"></div>
+            <div class="about-grid">
+                <div class="about-info-card">
+                    <div class="info-row">
+                        <div class="info-icon">🏢</div>
+                        <div><div class="info-label">公司全称</div><div class="info-value">安徽希拓科技有限公司</div></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-icon">📅</div>
+                        <div><div class="info-label">成立日期</div><div class="info-value">2024年07月17日</div></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-icon">📍</div>
+                        <div><div class="info-label">公司地址</div><div class="info-value">安徽省宣城市广德市站前大道与桃州南路交叉口西380米</div></div>
+                    </div>
+                </div>
+                <div>
+                    <p class="about-text"><strong>安徽希拓科技有限公司</strong>坐落于安徽省宣城市广德市，是一家集<strong>电力工程服务、新能源技术应用、智能配电设备研发与销售</strong>于一体的综合性科技企业。</p>
+                    <p class="about-text" style="margin-top:14px;">公司具备承接输电、供电、受电电力设施安装维修试验的专业能力，同时在太阳能发电、光伏设备制造、储能技术服务领域持续深耕，致力于为工商业客户及合作伙伴提供安全、高效、智能的能源解决方案。</p>
+                    <p class="about-text" style="margin-top:14px;">依托广德市的区位优势，公司积极融入长三角能源基础设施建设，以专业的技术服务和可靠的产品质量赢得市场信赖。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 业务范围 ==================== -->
+    <section class="section business-section" id="business">
+        <div class="section-inner">
+            <span class="section-label">核心业务</span>
+            <h2 class="section-title">业务范围</h2>
+            <div class="section-divider"></div>
+            <p class="section-desc">公司致力于为客户提供从电力工程到新能源应用的全链条服务，以下为我们的核心业务板块。</p>
+            <div class="business-grid">
+                <div class="business-card"><div class="card-icon">🔌</div><h3>电力设施安装与维修</h3><p>承接输电、供电、受电电力设施的安装、维修和试验，提供电气安装服务，确保电力系统安全稳定运行。</p><span class="card-tag">许可项目</span></div>
+                <div class="business-card"><div class="card-icon">⚡</div><h3>发电与配电业务</h3><p>涵盖发电业务、输电业务、供（配）电业务，为客户提供全方位的电力运营服务支持。</p><span class="card-tag">许可项目</span></div>
+                <div class="business-card"><div class="card-icon">🔧</div><h3>配电开关控制设备</h3><p>从事配电开关控制设备的制造、销售与研发，产品涵盖智能输配电及控制设备，品质可靠。</p><span class="card-tag">一般项目</span></div>
+                <div class="business-card"><div class="card-icon">☀️</div><h3>太阳能发电技术</h3><p>提供太阳能发电技术服务，涵盖光伏设备及元器件制造，助力绿色能源转型与碳减排目标。</p><span class="card-tag">一般项目</span></div>
+                <div class="business-card"><div class="card-icon">🔋</div><h3>储能技术服务</h3><p>提供专业的储能技术咨询与服务，结合智能配电系统，优化能源利用效率。</p><span class="card-tag">一般项目</span></div>
+                <div class="business-card"><div class="card-icon">🏗️</div><h3>工程配套服务</h3><p>涵盖建筑装饰材料销售、五金产品批发零售、电线电缆经营，以及工程技术服务与专业设计服务。</p><span class="card-tag">一般项目</span></div>
+                <div class="business-card"><div class="card-icon">🏠</div><h3>室内装饰装修</h3><p>承接住宅室内装饰装修工程，结合电气安装服务，打造安全舒适的居住空间。</p><span class="card-tag">许可项目</span></div>
+                <div class="business-card"><div class="card-icon">🤖</div><h3>智能化与咨询服务</h3><p>提供建筑智能化系统设计、人工智能公共服务平台技术咨询、信息技术咨询及物业管理服务。</p><span class="card-tag">综合服务</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 经营资质 ==================== -->
+    <section class="section license-section" id="license">
+        <div class="section-inner">
+            <span class="section-label">经营资质</span>
+            <h2 class="section-title">经营范围</h2>
+            <div class="section-divider"></div>
+            <p class="section-desc">公司严格依法经营，以下为经相关部门批准及自主开展的业务范围明细。</p>
+            <div class="license-grid">
+                <div class="license-card permit">
+                    <h3><span class="dot"></span>许可项目（经相关部门批准后方可开展）</h3>
+                    <ul>
+                        <li>输电、供电、受电电力设施的安装、维修和试验</li>
+                        <li>发电业务、输电业务、供（配）电业务</li>
+                        <li>电气安装服务</li>
+                        <li>住宅室内装饰装修</li>
+                        <li>建筑劳务分包</li>
+                        <li>建筑智能化系统设计</li>
+                    </ul>
+                </div>
+                <div class="license-card general">
+                    <h3><span class="dot"></span>一般项目（可自主依法经营）</h3>
+                    <ul>
+                        <li>配电开关控制设备制造、销售、研发</li>
+                        <li>太阳能发电技术服务</li>
+                        <li>光伏设备及元器件制造</li>
+                        <li>储能技术服务</li>
+                        <li>智能输配电及控制设备销售</li>
+                        <li>技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广</li>
+                        <li>建筑装饰材料销售</li>
+                        <li>五金产品批发、零售</li>
+                        <li>电线、电缆经营</li>
+                        <li>物业管理</li>
+                        <li>信息技术咨询服务</li>
+                        <li>专业设计服务</li>
+                        <li>工程技术服务（规划管理、勘察、设计、监理除外）</li>
+                        <li>人工智能公共服务平台技术咨询服务</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 联系我们 ==================== -->
+    <section class="section contact-section" id="contact">
+        <div class="section-inner">
+            <span class="section-label">联系我们</span>
+            <h2 class="section-title">合作咨询</h2>
+            <div class="section-divider"></div>
+            <p class="section-desc">期待与您携手合作，共创能源未来。欢迎通过以下方式与我们取得联系。</p>
+            <div class="contact-grid">
+                <div class="contact-info-block">
+                    <div class="contact-item">
+                        <div class="ci-icon">📍</div>
+                        <div class="ci-text"><h4>公司地址</h4><p>安徽省宣城市广德市站前大道与桃州南路交叉口西380米</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="ci-icon">📞</div>
+                        <div class="ci-text"><h4>电话咨询</h4><p>0563-xxxxxxx</p></div>
+                    </div>
+                     <div class="contact-item">
+                        <div class="ci-icon">📱</div>
+                        <div class="ci-text">
+                            <h4>合作热线</h4>
+                            <p>+86  15168383336（ 蔡先生 ）</p>  <!-- 请替换为实际电话号码 -->
+                        </div>
+                    </div>
+                    <!-- 邮箱咨询 -->
+                    <div class="contact-item">
+                        <div class="ci-icon">📫</div>
+                        <div class="ci-text">
+                            <h4>邮箱咨询</h4>
+                            <p>xituokj@168.com</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- 右侧嵌入的地图（新增地图功能） -->
+                    <div class="contact-map-placeholder">
+                        <!-- 将 src 改为您自己的图片文件名或路径 -->
+                        <img src="map.jpg" alt="安徽希拓科技有限公司位置地图" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 页脚 ==================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p style="margin-bottom:6px;">
+                &copy; 2024 - <span id="currentYear"></span> 安徽希拓科技有限公司
+                <span class="footer-divider">|</span> 希拓科技 · 保留所有权利。
+            </p>
+            <p>注册地址：安徽省宣城市广德市站前大道与桃州南路交叉口西380米</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button class="scroll-top" id="scrollTop" aria-label="返回顶部" title="返回顶部">↑</button>
+
+    <!-- ==================== 移动端底部导航栏 ==================== -->
+    <div class="mobile-bottom-nav" id="mobileBottomNav">
+        <div class="nav-grid">
+            <!-- 返回首页 -->
+            <a href="#home" class="nav-item"> <span class="nav-icon">🏠</span> <span>返回首页</span> </a>
+            <!-- 一键拨号（请将 0563xxxxxxx 改为真实电话） -->
+            <a href="tel:15168383336" class="nav-item"> <span class="nav-icon">📞</span> <span>一键拨号</span> </a>
+            <!-- 联系我们 -->
+            <a href="#contact" class="nav-item"> <span class="nav-icon">💬</span> <span>联系我们</span> </a>
+            <!-- 快速导航（打开菜单） -->
+            <button class="nav-item" id="navQuickBtn"> <span class="nav-icon">📋</span> <span>快速导航</span> </button>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const scrollTopBtn = document.getElementById('scrollTop');
+            const allNavAnchors = navLinks.querySelectorAll('a');
+            const currentYearSpan = document.getElementById('currentYear');
+            const quickNavBtn = document.getElementById('navQuickBtn');
+
+            if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
+
+            function openMenu() {
+                navLinks.classList.add('active');
+                hamburger.classList.add('active');
+                mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.contains('active') ? closeMenu() : openMenu();
+            });
+            mobileOverlay.addEventListener('click', closeMenu);
+            allNavAnchors.forEach(a => a.addEventListener('click', function() {
+                if (window.innerWidth <= 900) closeMenu();
+            }));
+
+            // 底部“快速导航”按钮点击事件
+            quickNavBtn.addEventListener('click', function() {
+                navLinks.classList.contains('active') ? closeMenu() : openMenu();
+            });
+
+            function updateNavbar() {
+                window.scrollY > 60 ? navbar.classList.add('scrolled') : navbar.classList.remove('scrolled');
+            }
+            function updateScrollTop() {
+                window.scrollY > 500 ? scrollTopBtn.classList.add('visible') : scrollTopBtn.classList.remove('visible');
+            }
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top:0, behavior:'smooth' });
+            });
+
+            function updateActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                let current = '';
+                const pos = window.scrollY + 120;
+                sections.forEach(sec => {
+                    if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) current = sec.id;
+                });
+                allNavAnchors.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+                });
+                if (window.scrollY < 200) {
+                    allNavAnchors.forEach(a => a.classList.remove('active'));
+                    const home = navLinks.querySelector('a[href="#home"]');
+                    if (home) home.classList.add('active');
+                }
+            }
+
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        updateNavbar();
+                        updateScrollTop();
+                        updateActiveNavLink();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
+            });
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 900 && navLinks.classList.contains('active')) closeMenu();
+            });
+
+            updateNavbar();
+            updateScrollTop();
+            updateActiveNavLink();
+        })();
+    </script>
+</body>
+</html>
